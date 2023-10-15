@@ -69,7 +69,410 @@
 
     </section>
 
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+}
+
+#right-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 450px;
+    height: auto;
+}
+
+#date{
+    margin-top: 50px;
+}
+
+.wrapper-quote{
+    padding: 20px 10px;
+    margin-right: 20px;
+}
+
+.calendar-sec{
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgb(207, 204, 204);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.wrapper-calendar{
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.wrapper-calendar header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    color: #878787;
+    font-size: 1.9rem;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .icons span:hover{
+    background: #f2f2f2;
+}
+
+header .icons span:last-child{
+    margin-right: -10px;
+}
+
+.calendar{
+    padding: 20px;
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-left: 0;
+}
+.calendar .days{
+    margin-bottom: 20px;
+}
+
+.calendar .weeks li{
+    font-weight: 500;
+}
+
+.calendar ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.days li.inactive{
+    color: #aaa;
+}
+
+.days li.active{
+    color: #fff;
+}
+
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.days li:hover::before{
+    background: #f2f2f2;
+
+}
+
+.days li.active::before{
+    background: rgb(35, 231, 245);
+}
+
+/* Quote Section */
+#quote{
+    font-style: italic;
+}
+
+#quote-btn{
+    background-color: #fff;
+    color: green;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+#quote-btn:hover{
+    background-color: green;
+    color: #fff;
+}
+
+/* Left Section */
+
+/* TODO SECTION */
+#main-todo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex: 1;
+}
+
+.todo-container{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgb(214, 213, 213);
+    width: 75%;
+    height: 50%;
+    padding: 10px 10px 20px 10px;
+    margin-top: 30px;
+}
+
+.todo-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.todo-form input{
+    flex: 1;
+    max-width: 500px;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.todo-form button{
+    padding: 0 8px;
+    margin: 10px 10px 10px 0;
+    background-color: rgb(38, 199, 38);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgb(38, 199, 38);
+}
+
+.todo-form button:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.todo-list{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow-y: scroll;
+}
+
+.todo-list-item{
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 0;
+}
+
+.todo-list-item p{
+    margin: 5px 0;
+}
+
+.todo-list-item button{
+    padding: 8px 8px;
+    background-color: rgb(214, 41, 41);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgb(214, 41, 41);
+}
+
+.todo-list-item button:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.bi-star-fill{
+    color: rgb(0, 0, 0);
+}
+
+.active{
+    color: gold;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleted-container{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgb(214, 213, 213);
+    width: 75%;
+    height: 50%;
+    padding: 10px 10px 20px 10px;
+}
+
+.deleted-todo{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow-y: scroll;
+}
+
+.deleted-todo-item{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.deleted-todo p{
+    text-decoration: line-through;
+    margin: 10px 0;
+}
+
+.deleted-todo button{
+    background-color: rgb(75, 232, 238);
+    color: #fff;
+    border: none;
+    padding: 8px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgb(75, 232, 238);
+
+}
+
+.deleted-todo button:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+
+/* for tablet user */
+@media (max-width: 1170px){
+    body{
+        display: flex;
+        flex-direction: column;
+        height: unset;
+        width: unset;
+    }
     
+    #main-todo-container{
+        order: 2;
+    }
+    
+    .calendar-sec{
+        display: none;
+    }
+    
+    #right-sec{
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: unset;
+        justify-content: unset; 
+    }
+    
+    #date, #time{
+        margin: 0;
+        padding: 10px 20px;
+        width: auto; 
+    }
+    
+    .wrapper-quote{
+        margin: 0;
+        padding: 10px 20px;
+        align-self: center;
+        flex: 1; 
+    }
+    
+} 
+
+
+/* for mobile */
+@media (max-width: 420px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        height: unset;
+        width: unset;
+    }
+
+    #main-todo-container{
+        order: 2;
+    }
+
+    #right-sec{
+        order: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #date, #time{
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+    .wrapper-quote{
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+    .calendar-sec{
+        display: none;
+    }
+
+    .todo-container{
+        width: 85%;
+        height: 500px;
+    }
+
+    .todo-list{
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+
+    .deleted-container{
+        width: 85%;
+        height: 500px;
+    }
+
+    .deleted-todo{
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+}
     
     <script src="app.js"></script>
 </body>
